@@ -49,9 +49,8 @@ namespace EnglishToMorseCode
             //Asks for input from user
             Console.WriteLine("Enter text to translate, either Morse code OR English");
 
-            //Grabs input and assigns to variable
+            //Grabs input, changes to lowercase, and assigns to variable
             string input = Console.ReadLine().ToLower();
-            int i = input.Length;
             string outputString = "";
 
             //Checks if input is blank and makes sure the first value is a letter or number
@@ -61,7 +60,7 @@ namespace EnglishToMorseCode
                 {
                     for (int j = 0; j < translations.Length; j++)
                     {
-                        if (translations[j].english == c.ToString())
+                        if (c.ToString() == translations[j].english)
                         {
                             outputString += translations[j].morse + " ";
                             break;
@@ -78,7 +77,7 @@ namespace EnglishToMorseCode
                 {
                     for (int j = 0; j < translations.Length; j++)
                     {
-                        if (translations[j].morse == morse)
+                        if (morse == translations[j].morse)
                         {
                             outputString += translations[j].english + " ";
                             break;
